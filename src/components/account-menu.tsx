@@ -21,6 +21,7 @@ export function AccountMenu() {
   const { data: profile, isLoading: isLoadingProfile } = useQuery({
     queryKey: ['profile'],
     queryFn: getProfile,
+    staleTime: Infinity,
   })
 
   // isLoading é um hook que eu pego de dentro do reactquery que me da a opção de pegar o estado de carregamento
@@ -28,6 +29,7 @@ export function AccountMenu() {
     useQuery({
       queryKey: ['managed-restaurant'],
       queryFn: getManagedRestaurant,
+      staleTime: Infinity,
     })
 
   return (
